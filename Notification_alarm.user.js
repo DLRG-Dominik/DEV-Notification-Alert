@@ -11,7 +11,7 @@
 // @grant        none
 // ==/UserScript==
 
-// ======= EINSTELLUNGEN ======= //
+
 var allianceChatNotifcation = true; // true = Chat-Notification sind standardmäßig aktiviert (Standard: true).
 var allianceS5Notifcation = true; // true = Status 5-Notification sind standardmäßig aktiviert (Standard: true).
 var allianceStatusNotifcation = false; // true = Alle anderen Status-Notification sind standardmäßig aktiviert (Standard: false).
@@ -19,11 +19,33 @@ var timeout_Chat = 3; //Zeit in Sekunden wie lange Chat-Notifications angezeigt 
 var timeout_Status = 3; //Zeit in Sekunden wie lange Status-Notifications angezeigt werden sollen (Standard: 3).
 
 
-// ======= AB HIER NICHTS MEHR VERÄNDERN! ======= //
+
+var set = {
+       locale: I18n.locale,
+       translations: {
+           de: {
+               not_support:"Dieser Browser unterstützt leider keine HTML5-Notifications",
+               load:"Laden",
+               del:"Löschen"
+           }
+           en: {
+               save:"This browser does not support HTML5 notifications",
+               load:"Laden",
+               del:"Löschen"
+           }
+           nl: {
+               save:"Helaas ondersteunt deze browser ondersteunt geen HTML5 meldingen",
+               load:"Laden",
+               del:"Löschen"
+           }
+       }
+   }
+
+
 function notifyMe(username,message,type="init",fms="2",vid="0") {
 
     if (!("Notification" in window)) {
-        alert("This browser does not support desktop notification");
+        alert(set.translations[set.locale].not_support);
     }
 
 
