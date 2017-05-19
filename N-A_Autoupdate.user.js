@@ -6,8 +6,8 @@
 // @author       DLRG-Dominik
 // @include      *://www.leitstellenspiel.de/
 // @exclude      *://www.leitstellenspiel.de/mission*
-// @updateURL    https://github.com/DLRG-Dominik/DEV-Notification-Alert/raw/master/N-A_Autoupdate.dev.js
-// @downloadURL  https://github.com/DLRG-Dominik/DEV-Notification-Alert/raw/master/N-A_Autoupdate.dev.js
+// @updateURL    https://github.com/DLRG-Dominik/DEV-Notification-Alert/raw/master/N-A_Autoupdate.user.js
+// @downloadURL  https://github.com/DLRG-Dominik/DEV-Notification-Alert/raw/master/N-A_Autoupdate.user.js
 // @grant        none
 // ==/UserScript==
 
