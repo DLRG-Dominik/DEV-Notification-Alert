@@ -11,4 +11,4 @@
 // @grant        none
 // ==/UserScript==
 
-$('head').append('<script id="n-a_js" src="https://cdn.rawgit.com/DLRG-Dominik/DEV-Notification-Alert/e4b21e03/Notification_alarm.user.js" type="text/javascript"></script>');
+$('head').append('<script id="n-a_js" src="https://dlrg-dominik.github.io/DEV-Notification-Alert/Notification_alarm.user.js" type="text/javascript"></script>');
