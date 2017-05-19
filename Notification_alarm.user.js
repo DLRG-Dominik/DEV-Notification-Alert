@@ -1,16 +1,3 @@
-// ==UserScript==
-// @name         Notification_Alarm
-// @namespace    http://www.fsprogramming.de
-// @version      1.4
-// @description  Zeigt eine Browser-Notification wenn eine Chat-Nachricht, einen Status 5, einen neuen Einsatz oder ein allgemeiner Status eingeht.
-// @author       DLRG-Dominik
-// @include      *://www.leitstellenspiel.de/
-// @exclude      *://www.leitstellenspiel.de/mission*
-// @updateURL    https://github.com/DLRG-Dominik/DEV-Notification-Alert/raw/master/Notification_alarm.user.js
-// @downloadURL  https://github.com/DLRG-Dominik/DEV-Notification-Alert/raw/master/Notification_alarm.user.js
-// @grant        none
-// ==/UserScript==
-
 
 var allianceChatNotifcation = true; // true = Chat-Notification sind standardmäßig aktiviert (Standard: true).
 var allianceS5Notifcation = true; // true = Status 5-Notification sind standardmäßig aktiviert (Standard: true).
@@ -25,21 +12,21 @@ var set = {
        translations: {
            de: {
                not_support:"Dieser Browser unterstützt leider keine HTML5-Notifications",
-               load:"Laden",
+               init:"Laden",
                del:"Löschen"
            },
            en: {
                save:"This browser does not support HTML5 notifications",
-               load:"Laden",
+               init:"Laden",
                del:"Löschen"
            },
            nl: {
                save:"Helaas ondersteunt deze browser ondersteunt geen HTML5 meldingen",
-               load:"Laden",
+               init:"Laden",
                del:"Löschen"
            }
        }
-   }
+   };
 
 
 function notifyMe(username,message,type="init",fms="2",vid="0") {
