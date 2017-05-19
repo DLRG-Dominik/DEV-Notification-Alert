@@ -12,17 +12,18 @@ var set = {
        translations: {
            de: {
                not_support:"Dieser Browser unterstützt leider keine HTML5-Notifications",
-               init:"Laden",
+               //init:"Notification-Alarm wird initalisiert, Bitte warten...",
+               init:"Laden...",
                del:"Löschen"
            },
            en: {
                save:"This browser does not support HTML5 notifications",
-               init:"Laden",
+               init:"Notification alarm is initialized, please wait ...",
                del:"Löschen"
            },
            nl: {
                save:"Helaas ondersteunt deze browser ondersteunt geen HTML5 meldingen",
-               init:"Laden",
+               init:"Melding alarm wordt geactiveerd, Please wait ...",
                del:"Löschen"
            }
        }
@@ -86,7 +87,7 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
 
 
 }
-notifyMe("Initalisierung...","Notification-Alarm wird initalisiert, Bitte warten...","init");
+notifyMe("Initalisierung...",set.translations[set.locale].init,"init");
 (function(){
 
 if(allianceChatNotifcation)
