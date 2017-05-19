@@ -2,12 +2,12 @@
 // @name         Notification_Alarm
 // @namespace    http://www.fsprogramming.de
 // @version      1.2
-// @description  Zeigt eine Browser-Notification wenn eine Chat-Nachricht, einen Status 5, einen neuen Einsatz oder ein allgemeiner Status eingeht.  
+// @description  Zeigt eine Browser-Notification wenn eine Chat-Nachricht, einen Status 5, einen neuen Einsatz oder ein allgemeiner Status eingeht.
 // @author       DLRG-Dominik
 // @include      *://www.leitstellenspiel.de/
 // @exclude      *://www.leitstellenspiel.de/mission*
-// @updateURL    https://github.com/DLRG-Dominik/LSSNotifity-Alarm/raw/master/Notification_alarm.user.js
-// @downloadURL  https://github.com/DLRG-Dominik/LSSNotifity-Alarm/raw/master/Notification_alarm.user.js
+// @updateURL    https://github.com/DLRG-Dominik/DEV-Notification-Alert/raw/master/Notification_alarm.user.js
+// @downloadURL  https://github.com/DLRG-Dominik/DEV-Notification-Alert/raw/master/Notification_alarm.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -96,7 +96,7 @@ if(allianceChatNotifcation)
         allianceChatNotifcation = !allianceChatNotifcation;
         $(this).hasClass("btn-success") ? $(this).removeClass("btn-success").addClass("btn-danger"): $(this).addClass("btn-success").removeClass("btn-danger");
         return false;
-    });  
+    });
     }
     if(allianceS5Notifcation)
     {
@@ -105,7 +105,7 @@ if(allianceChatNotifcation)
         allianceS5Notifcation = !allianceS5Notifcation;
         $(this).hasClass("btn-success") ? $(this).removeClass("btn-success").addClass("btn-danger"): $(this).addClass("btn-success").removeClass("btn-danger");
         return false;
-    }); 
+    });
     }
     else
     {
@@ -116,7 +116,7 @@ if(allianceChatNotifcation)
         return false;
     });
     }
-    
+
     if(allianceStatusNotifcation)
     {
       $('<a href="#" class="btn btn-success btn-xs pull-right" title="Notification-Alarm aus/ein schalten">N-A: Status</a>').appendTo($('#chat_outer .panel-heading'))
@@ -124,7 +124,7 @@ if(allianceChatNotifcation)
         allianceStatusNotifcation = !allianceStatusNotifcation;
         $(this).hasClass("btn-success") ? $(this).removeClass("btn-success").addClass("btn-danger"): $(this).addClass("btn-success").removeClass("btn-danger");
         return false;
-    });  
+    });
     }
     else
     {
