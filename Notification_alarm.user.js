@@ -14,18 +14,21 @@ var set = {
                not_support:"Dieser Browser unterstützt leider keine HTML5-Notifications",
                init:"Notification-Alarm wird initalisiert, Bitte warten...",
                inithead:"Initalisierung",
+               chat_message: "Chatnachricht von ",
                del:"Löschen"
            },
            en: {
                save:"This browser does not support HTML5 notifications",
                init:"Notification alarm is initialized, please wait ...",
                inithead:"Initialization",
+               chat_message: "Chat message from",
                del:"Löschen"
            },
            nl: {
                save:"Helaas ondersteunt deze browser ondersteunt geen HTML5 meldingen",
                init:"Melding alarm wordt geactiveerd, Please wait ...",
                inithead:"initialisatie",
+               chat_message: "Chat bericht ",
                del:"Löschen"
            }
        }
@@ -50,7 +53,7 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
         }
         else if(type =="Chat")
         {
-            var notification = new Notification('Chatnachricht von '+username, {
+            var notification = new Notification(set.translations[set.locale].chat_message+username, {
                 body: message,
                 icon: "https://raw.githubusercontent.com/DLRG-Dominik/LSSNotifity-Alarm/master/134895.png"
             });
