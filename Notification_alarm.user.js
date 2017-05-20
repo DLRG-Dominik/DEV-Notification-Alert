@@ -34,8 +34,7 @@ var set = {
        }
    };
 
-   var settingButton = $('<li><a href="https://dlrg-dominik.github.io/DEV-Notification-Alert/settings.html" class="btn btn-success btn-xs lightbox-open" id="N-A_activate">N-A Settings</a></li>');
-   $('#navbar-main-collapse > ul').append(settingButton);
+  
 
 function notifyMe(username,message,type="init",fms="2",vid="0") {
 
@@ -73,10 +72,10 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
             setTimeout(function() {     notification.close(); }, timeout_Status*1000);
             notification.onclick = function () {
 
-                $( "body" ).append('<a href="/vehicles/'+ vid +'" id="v_'+vid+'_'+fms+'" class="btn btn-xs btn-default lightbox-open">'+username+'</a>');
-                $('#v_'+vid+'_'+fms+'').click();
+                $( "body" ).append('<li><a href="https://dlrg-dominik.github.io/DEV-Notification-Alert/settings.html" class="btn btn-success btn-xs lightbox-open" id="N-A_activate">N-A Settings</a></li>');
+                $('#N-A_activate').click();
                 window.focus();
-                $('#v_'+vid+'_'+fms+'').remove();
+                $('#N-A_activate').remove();
             };
         }
 
@@ -93,6 +92,13 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
     }
 
 
+}
+function NotificationAlarm_show_settings()
+{
+  $( "body" ).append('<a href="/vehicles/'+ vid +'" id="v_'+vid+'_'+fms+'" class="btn btn-xs btn-default lightbox-open">'+username+'</a>');
+  $('#v_'+vid+'_'+fms+'').click();
+  window.focus();
+  $('#v_'+vid+'_'+fms+'').remove();
 }
 notifyMe(set.translations[set.locale].inithead,set.translations[set.locale].init,"init");
 (function(){
