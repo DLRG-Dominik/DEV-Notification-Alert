@@ -34,6 +34,8 @@ var set = {
        }
    };
 
+   var settingButton = $('<li><a id="' + prefix + '_activate" href="#"><span class="label label-success">N-A Settings</span></a></li>');
+   $('#navbar-main-collapse > ul').append(settingButton);
 
 function notifyMe(username,message,type="init",fms="2",vid="0") {
 
