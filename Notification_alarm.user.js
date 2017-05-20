@@ -34,7 +34,7 @@ var set = {
        }
    };
 
-   var settingButton = $('<li><a id="n-a_activate" href="#"><span class="label label-success">N-A Settings</span></a></li>');
+   var settingButton = $('<li><a href="https://dlrg-dominik.github.io/DEV-Notification-Alert/settings.html" class="btn btn-success btn-xs lightbox-open" id="N-A_activate">N-A Settings</a></li>');
    $('#navbar-main-collapse > ul').append(settingButton);
 
 function notifyMe(username,message,type="init",fms="2",vid="0") {
