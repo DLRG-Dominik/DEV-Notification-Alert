@@ -177,8 +177,6 @@
 
 var Chat = localStorage.getItem("Chat") == null ? true : localStorage.getItem("Chat");
 var S5 = localStorage.getItem("S5") == null ? true : localStorage.getItem("S5");
-console.log(S5);
-console.log(localstorage.getItem("S5"));
 var Status = localStorage.getItem("Status") == null ? false : localStorage.getItem("Status");
 var ChatP = localStorage.getItem("ChatP") == null ? true : localStorage.getItem("ChatP");
 var Chat_blend = localStorage.getItem("Chat_blend") == null ? "3" : localStorage.getItem("Chat_blend");
@@ -188,7 +186,7 @@ var ChatP_blend = localStorage.getItem("ChatP_blend") == null ? "3" : localStora
 
 
 document.getElementById('N-A_chat').checked = Chat;
-document.getElementById('N-A_S5').checked = S5;
+document.getElementById('N-A_S5').checked = (S5 == "true");
 document.getElementById('N-A_status').checked = Status;
 document.getElementById('N-A_chatp').checked = ChatP;
 document.getElementById('N-A_chat_blend').value = Chat_blend;
