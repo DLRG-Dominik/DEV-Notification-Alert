@@ -204,7 +204,8 @@ function save_settings()
   localStorage.setItem("S5_blend",document.getElementById('N-A_S5_blend').value);
   localStorage.setItem("Status_blend",document.getElementById('N-A_status_blend').value);
   localStorage.setItem("ChatP_blend",document.getElementById('N-A_chatp_blend').value);
-  window.opener.location.reload(false);
+  $( "body" ).append('<li><a href="https://www.leitstellenspiel.de/" class="btn btn-success" id="N-A_activate">N-A Settings</a></li>');
+  $('#N-A_activate').click();
 }
 
 </script>
