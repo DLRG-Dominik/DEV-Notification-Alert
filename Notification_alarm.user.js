@@ -97,7 +97,7 @@ $( "body" ).append('<script>function reload_notification() { window.location.rel
 function NotificationAlarm_show_settings()
 {
   $.ajax({
-		type: "POST",
+		type: "GET",
 		url: "https://dlrg-dominik.github.io/DEV-Notification-Alert/settings_"+ set.locale +".html",
 		data: "",
 		dataType: "html",
