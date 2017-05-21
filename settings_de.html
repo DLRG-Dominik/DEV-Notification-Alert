@@ -170,15 +170,16 @@
     </div>
   </div>
 <script>
-var Chat = GM_getValue("Chat");
+
+var Chat = localStorage.getItem("Chat");
 alert(Chat);
-var S5 = GM_getValue("S5");
-var Status = GM_getValue("Status");
-var ChatP = GM_getValue("ChatP");
-var Chat_blend = GM_getValue("Chat_blend");
-var S5_blend = GM_getValue("S5_blend");
-var Status_blend = GM_getValue("Status_blend");
-var ChatP_blend = GM_getValue("ChatP_blend");
+var S5 = localStorage.getItem("S5");
+var Status = localStorage.getItem("Status");
+var ChatP = localStorage.getItem("ChatP");
+var Chat_blend = localStorage.getItem("Chat_blend");
+var S5_blend = localStorage.getItem("S5_blend");
+var Status_blend = localStorage.getItem("Status_blend");
+var ChatP_blend = localStorage.getItem("ChatP_blend");
 $('#N-A_chat').checked = Chat;
 $('#N-A_S5').checked = S5;
 $('#N-A_status').checked = Status;
