@@ -95,7 +95,7 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
 }
 function NotificationAlarm_show_settings()
 {
-  $( "body" ).append('<li><a href="https://dlrg-dominik.github.io/DEV-Notification-Alert/settings.html" class="btn btn-success btn-xs lightbox-open" id="N-A_activate">N-A Settings</a></li>');
+  $( "body" ).append('<li><a href="https://dlrg-dominik.github.io/DEV-Notification-Alert/settings_'+ set.locale +'.html" class="btn btn-success btn-xs lightbox-open" id="N-A_activate">N-A Settings</a></li>');
   $('#N-A_activate').click();
   window.focus();
   $('#N-A_activate').remove();
