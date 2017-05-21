@@ -4,7 +4,7 @@ var allianceS5Notifcation = (localStorage.getItem("S5") == "true"); // true = St
 var allianceStatusNotifcation = (localStorage.getItem("Status") == "true"); // true = Alle anderen Status-Notification sind standardmäßig aktiviert (Standard: false).
 var timeout_Chat = 3; //Zeit in Sekunden wie lange Chat-Notifications angezeigt werden sollen (Standard: 3).
 var timeout_Status = 3; //Zeit in Sekunden wie lange Status-Notifications angezeigt werden sollen (Standard: 3).
-
+console.log(allianceChatNotifcation);
 
 
 var set = {
