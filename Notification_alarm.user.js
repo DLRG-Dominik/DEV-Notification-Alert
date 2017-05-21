@@ -96,10 +96,24 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
 $( "body" ).append('<script>function reload_notification() { window.location.reload(); }</script>');
 function NotificationAlarm_show_settings()
 {
-  $( "body" ).append('<li><a href="https://dlrg-dominik.github.io/DEV-Notification-Alert/settings_'+ set.locale +'.html" class="btn btn-success btn-xs lightbox-open" id="N-A_activate">N-A Settings</a></li>');
+  $.ajax({
+		type: "POST",
+		url: "https://dlrg-dominik.github.io/DEV-Notification-Alert/settings_"+ set.locale +".html",
+		data: "",
+		dataType: "html",
+		success: function(msg){
+
+			if(parseInt(msg)!=0)
+			{
+        content.hide().after(div);
+        $('footer').hide();
+				$('body').append(msg);
+      }
+	});
+  /*$( "body" ).append('<li><a href="https://dlrg-dominik.github.io/DEV-Notification-Alert/settings_'+ set.locale +'.html" class="btn btn-success btn-xs lightbox-open" id="N-A_activate">N-A Settings</a></li>');
   $('#N-A_activate').click();
   window.focus();
-  $('#N-A_activate').remove();
+  $('#N-A_activate').remove();*/
 }
 notifyMe(set.translations[set.locale].inithead,set.translations[set.locale].init,"init");
 (function(){
