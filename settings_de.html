@@ -185,10 +185,10 @@ var Status_blend = localStorage.getItem("Status_blend") == null ? "3" : localSto
 var ChatP_blend = localStorage.getItem("ChatP_blend") == null ? "3" : localStorage.getItem("ChatP_blend");
 
 
-document.getElementById('N-A_chat').checked = Chat;
+document.getElementById('N-A_chat').checked = (Chat == "true");
 document.getElementById('N-A_S5').checked = (S5 == "true");
-document.getElementById('N-A_status').checked = Status;
-document.getElementById('N-A_chatp').checked = ChatP;
+document.getElementById('N-A_status').checked = (Status == "true");
+document.getElementById('N-A_chatp').checked = (ChatP == "true");
 document.getElementById('N-A_chat_blend').value = Chat_blend;
 document.getElementById('N-A_S5_blend').value = S5_blend;
 document.getElementById('N-A_status_blend').value = Status_blend;
