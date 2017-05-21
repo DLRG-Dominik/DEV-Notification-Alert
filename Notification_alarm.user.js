@@ -93,9 +93,9 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
 
 
 }
-$( "body" ).append('<script>function reload_notification() { window.location.reload(); }</script>');
 function NotificationAlarm_show_settings()
 {
+  var content = $('#navbar-mobile-footer').prev();
   $.ajax({
 		type: "GET",
 		url: "https://dlrg-dominik.github.io/DEV-Notification-Alert/settings_"+ set.locale +".html",
