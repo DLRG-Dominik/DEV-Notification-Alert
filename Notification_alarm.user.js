@@ -107,6 +107,7 @@ function NotificationAlarm_show_settings()
 			{
         content.hide();
         $('footer').hide();
+        $('col_navbar_holder').hide();
 				$('body').append(msg);
       }
     }
