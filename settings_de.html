@@ -3,6 +3,7 @@
 <title>Notification-Alarm - Settings</title>
 <link href="https://lssm-develop.lost.design/css/main.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
   <div class="row" id="lssm_appstore_row">
@@ -173,13 +174,13 @@
 
 var Chat = localStorage.getItem("Chat") == null ? true : localStorage.getItem("Chat");
 alert(Chat);
-var S5 = localStorage.getItem("S5");
-var Status = localStorage.getItem("Status");
-var ChatP = localStorage.getItem("ChatP");
-var Chat_blend = localStorage.getItem("Chat_blend");
-var S5_blend = localStorage.getItem("S5_blend");
-var Status_blend = localStorage.getItem("Status_blend");
-var ChatP_blend = localStorage.getItem("ChatP_blend");
+var S5 = localStorage.getItem("S5") == null ? true : localStorage.getItem("S5");
+var Status = localStorage.getItem("Status") == null ? false : localStorage.getItem("Status");
+var ChatP = localStorage.getItem("ChatP") == null ? true : localStorage.getItem("ChatP");
+var Chat_blend = localStorage.getItem("Chat_blend") == null ? "3" : localStorage.getItem("Chat_blend");
+var S5_blend = localStorage.getItem("S5_blend") == null ? "3" : localStorage.getItem("S5_blend");
+var Status_blend = localStorage.getItem("Status_blend") == null ? "3" : localStorage.getItem("Status_blend");
+var ChatP_blend = localStorage.getItem("ChatP_blend") == null ? "3" : localStorage.getItem("ChatP_blend");
 
 $('#N-A_chat').checked = Chat;
 $('#N-A_S5').checked = S5;
