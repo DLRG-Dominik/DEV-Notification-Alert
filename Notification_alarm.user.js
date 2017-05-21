@@ -105,7 +105,7 @@ function NotificationAlarm_show_settings()
 
 			if(parseInt(msg)!=0)
 			{
-        content.hide().after(div);
+        content.hide();
         $('footer').hide();
 				$('body').append(msg);
       }
