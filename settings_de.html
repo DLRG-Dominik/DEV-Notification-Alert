@@ -171,7 +171,7 @@
   </div>
 <script>
 
-var Chat = localStorage.getItem("Chat");
+var Chat = localStorage.getItem("Chat") == null ? true : localStorage.getItem("Chat");
 alert(Chat);
 var S5 = localStorage.getItem("S5");
 var Status = localStorage.getItem("Status");
@@ -180,6 +180,7 @@ var Chat_blend = localStorage.getItem("Chat_blend");
 var S5_blend = localStorage.getItem("S5_blend");
 var Status_blend = localStorage.getItem("Status_blend");
 var ChatP_blend = localStorage.getItem("ChatP_blend");
+
 $('#N-A_chat').checked = Chat;
 $('#N-A_S5').checked = S5;
 $('#N-A_status').checked = Status;
