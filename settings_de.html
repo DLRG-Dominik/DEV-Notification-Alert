@@ -181,10 +181,29 @@ var S5_blend = localStorage.getItem("S5_blend") == null ? "3" : localStorage.get
 var Status_blend = localStorage.getItem("Status_blend") == null ? "3" : localStorage.getItem("Status_blend");
 var ChatP_blend = localStorage.getItem("ChatP_blend") == null ? "3" : localStorage.getItem("ChatP_blend");
 
+
 document.getElementById('N-A_chat').checked = Chat;
 document.getElementById('N-A_S5').checked = S5;
 document.getElementById('N-A_status').checked = Status;
 document.getElementById('N-A_chatp').checked = ChatP;
+document.getElementById('N-A_chat_blend').value = Chat_blend;
+document.getElementById('N-A_S5_blend').value = S5_blend;
+document.getElementById('N-A_status_blend').value = Status_blend;
+document.getElementById('N-A_chatp_blend').value = ChatP_blend;
+
+function save_settings()
+{
+
+  localStorage.setItem("Chat",document.getElementById('N-A_chat').checked);
+  localStorage.setItem("S5",document.getElementById('N-A_S5').checked);
+  localStorage.setItem("Status",document.getElementById('N-A_status').checked);
+  localStorage.setItem("ChatP",document.getElementById('N-A_chatp').checked);
+  localStorage.setItem("Chat_blend",document.getElementById('N-A_chat_blend').value);
+  localStorage.setItem("S5_blend",document.getElementById('N-A_S5_blend').value);
+  localStorage.setItem("Status_blend",document.getElementById('N-A_status_blend').value);
+  localStorage.setItem("ChatP_blend",document.getElementById('N-A_chatp_blend').value);
+  location.reload();
+}
 
 </script>
 </body>
