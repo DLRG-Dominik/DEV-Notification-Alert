@@ -170,7 +170,9 @@
       </div>
     </div>
   </div>
+<div id="backtolss">
 
+</div>
 <script>
 
 var Chat = localStorage.getItem("Chat") == null ? true : localStorage.getItem("Chat");
@@ -204,8 +206,8 @@ function save_settings()
   localStorage.setItem("S5_blend",document.getElementById('N-A_S5_blend').value);
   localStorage.setItem("Status_blend",document.getElementById('N-A_status_blend').value);
   localStorage.setItem("ChatP_blend",document.getElementById('N-A_chatp_blend').value);
-  $( "body" ).append('<li><a href="https://www.leitstellenspiel.de/" class="btn btn-success" id="N-A_activate">N-A Settings</a></li>');
-  $('#N-A_activate').click();
+  document.getElementById('backtolss').innerHTML = '<li><a href="https://www.leitstellenspiel.de/" class="btn btn-success" id="N-A_activate">N-A Settings</a></li>';
+  document.getElementById('backtolss').click();
 }
 
 </script>
