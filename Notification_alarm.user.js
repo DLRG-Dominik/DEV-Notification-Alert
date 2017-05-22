@@ -26,26 +26,57 @@ var set = {
                       chat_title: "Chatnachrichten",
                       chat_text: "Chatnachrichten als Notification bekommen.",
                       s5_title:"Status 5",
+                      save: "Speichern",
                       s5_text: "Status 5 als Notification bekommen",
                       status_title: "Status",
                       status_text:"Alle Status-Meldungen als Notification bekommen.",
                       chatp_title: "Chatnachrichten als Info-Popup",
-                      chatp_text:"Alle Chatnachrichten auch als Popup-Nachrichten am rechten Rand anzeigen(ehemals Chat-Notification)",
-
-
-               }
+                      chatp_text:"Alle Chatnachrichten auch als Popup-Nachrichten am rechten Rand anzeigen(ehemals Chat-Notification)"
+             }
            },
            en: {
-               save:"This browser does not support HTML5 notifications",
-               init:"Notification alarm is initialized, please wait ...",
-               inithead:"Initialization",
-               chat_message: "Chat message from "
+               not_support:"Dieser Browser unterstützt leider keine HTML5-Notifications",
+               init:"Notification-Alarm wird initalisiert, Bitte warten...",
+               inithead:"Initalisierung",
+               chat_message: "Chatnachricht von ",
+               blend:"Ausblenden nach:",
+               seconds:"Sekunden",
+               settings:{
+                      title: "Einstellungen - Notification-Alarm",
+                      text_1: "Willkommen im Einstellungsbereich vom Notification-Alarm.",
+                      text_2: "Hier findest du alle einstellungen, um den N-A auf dich zu personalisieren. Die Einstellungen werden pro Browser gespeichert. Beduetet du kannst hier andere Einstellungen vornehmen als zb. auf deinem 2. Rechner.",
+                      chat_title: "Chatnachrichten",
+                      chat_text: "Chatnachrichten als Notification bekommen.",
+                      s5_title:"Status 5",
+                      save: "Save",
+                      s5_text: "Status 5 als Notification bekommen",
+                      status_title: "Status",
+                      status_text:"Alle Status-Meldungen als Notification bekommen.",
+                      chatp_title: "Chatnachrichten als Info-Popup",
+                      chatp_text:"Alle Chatnachrichten auch als Popup-Nachrichten am rechten Rand anzeigen(ehemals Chat-Notification)"
+             }
            },
            nl: {
-               save:"Helaas ondersteunt deze browser ondersteunt geen HTML5 meldingen",
-               init:"Melding alarm wordt geactiveerd, Please wait ...",
-               inithead:"initialisatie",
-               chat_message: "Chat bericht "
+               not_support:"Dieser Browser unterstützt leider keine HTML5-Notifications",
+               init:"Notification-Alarm wird initalisiert, Bitte warten...",
+               inithead:"Initalisierung",
+               chat_message: "Chatnachricht von ",
+               blend:"Ausblenden nach:",
+               seconds:"Sekunden",
+               settings:{
+                      title: "Einstellungen - Notification-Alarm",
+                      text_1: "Willkommen im Einstellungsbereich vom Notification-Alarm.",
+                      text_2: "Hier findest du alle einstellungen, um den N-A auf dich zu personalisieren. Die Einstellungen werden pro Browser gespeichert. Beduetet du kannst hier andere Einstellungen vornehmen als zb. auf deinem 2. Rechner.",
+                      chat_title: "Chatnachrichten",
+                      chat_text: "Chatnachrichten als Notification bekommen.",
+                      s5_title:"Status 5",
+                      save: "Speichern",
+                      s5_text: "Status 5 als Notification bekommen",
+                      status_title: "Status",
+                      status_text:"Alle Status-Meldungen als Notification bekommen.",
+                      chatp_title: "Chatnachrichten als Info-Popup",
+                      chatp_text:"Alle Chatnachrichten auch als Popup-Nachrichten am rechten Rand anzeigen(ehemals Chat-Notification)"
+             }
            }
        }
    };
