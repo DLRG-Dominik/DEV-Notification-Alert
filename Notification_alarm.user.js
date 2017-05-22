@@ -2,9 +2,9 @@
 var allianceChatNotifcation = (localStorage.getItem("Chat") == "true"); // true = Chat-Notification sind standardmäßig aktiviert (Standard: true).
 var allianceS5Notifcation = (localStorage.getItem("S5") == "true"); // true = Status 5-Notification sind standardmäßig aktiviert (Standard: true).
 var allianceStatusNotifcation = (localStorage.getItem("Status") == "true"); // true = Alle anderen Status-Notification sind standardmäßig aktiviert (Standard: false).
-var timeout_Chat = 3; //Zeit in Sekunden wie lange Chat-Notifications angezeigt werden sollen (Standard: 3).
-var timeout_Status = 3; //Zeit in Sekunden wie lange Status-Notifications angezeigt werden sollen (Standard: 3).
-console.log(allianceChatNotifcation);
+var timeout_Chat = localStorage.getItem("Chat_blend"); //Zeit in Sekunden wie lange Chat-Notifications angezeigt werden sollen (Standard: 3).
+var timeout_Status = localStorage.getItem("Status_blend"); //Zeit in Sekunden wie lange Status-Notifications angezeigt werden sollen (Standard: 3).
+var timeout_ChatPopup = localStorage.getItem("ChatP_blend");
 
 
 var set = {
@@ -93,6 +93,47 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
 
 
 }
+var $mainDiv = $('<div id="chatNote" class="panel panel-default"><div class="panel-heading">Chat</div></div>');
+$mainDiv.css({
+    'position': 'fixed',
+    'width': '250px',
+    'z-index': '99999',
+    'margin-left': '-255px',
+    'top': '20%',
+    'left': '100%',
+    'display':'none',
+    'cursor':'pointer'
+});
+$mainDiv.click(function(){
+    $(this).hide('slow');
+});
+var $contentDiv = $('<div class="panel-body" style="background-color: white;"></div>');
+var $ul = $('<ul id="chatNoteUl"></ul>');
+$ul.css({
+    'list-style': 'none',
+    'margin-left': '0',
+    'padding-left':' 20px'
+});
+$ul.appendTo($contentDiv);
+$contentDiv.appendTo($mainDiv);
+$mainDiv.appendTo($('body'));
+var MainDivTimer;
+function hideMainDiv(){
+    clearTimeout(MainDivTimer);
+    MainDivTimer = setTimeout(function(){
+        $mainDiv.hide('slow');
+    },timeout_ChatPopup*1000);
+}
+function ChatPopup(date,user_id,username,mission_id,message)
+{
+  var e = "<li><span class='mission_chat_message_username'>[" + date + "] <a href='/profile/" + user_id + "' class='lightbox-open'>" + username + ":</a></span>";
+  mission_id && (e = e + "<a href='/missions/" + mission_id + "' class='lightbox-open'><span class='glyphicon glyphicon-bell'></span></a> ");
+  e = e + " " + message + "</li>";
+  $(e).appendTo($ul).delay(timeout_ChatPopup*1000).hide('slow',function(){$(this).remove();});
+  $mainDiv.show('slow');
+  hideMainDiv();
+
+}
 function NotificationAlarm_show_settings()
 {
   var content = $('#navbar-mobile-footer').prev();
@@ -119,62 +160,6 @@ function NotificationAlarm_show_settings()
 }
 notifyMe(set.translations[set.locale].inithead,set.translations[set.locale].init,"init");
 (function(){
-
-if(allianceChatNotifcation)
-    {
-    $('<a href="#" class="btn btn-success btn-xs pull-right" title="Notification-Alarm aus/ein schalten">N-A: Chat</a>').appendTo($('#chat_outer .panel-heading'))
-        .click(function(e){
-        allianceChatNotifcation = !allianceChatNotifcation;
-        $(this).hasClass("btn-success") ? $(this).removeClass("btn-success").addClass("btn-danger"): $(this).addClass("btn-success").removeClass("btn-danger");
-        return false;
-    });
-    }
-    else
-    {
-       $('<a href="#" class="btn btn-danger btn-xs pull-right" title="Notification-Alarm aus/ein schalten">N-A: Chat</a>').appendTo($('#chat_outer .panel-heading'))
-        .click(function(e){
-        allianceChatNotifcation = !allianceChatNotifcation;
-        $(this).hasClass("btn-success") ? $(this).removeClass("btn-success").addClass("btn-danger"): $(this).addClass("btn-success").removeClass("btn-danger");
-        return false;
-    });
-    }
-    if(allianceS5Notifcation)
-    {
-       $('<a href="#" class="btn btn-success btn-xs pull-right" title="Notification-Alarm aus/ein schalten">N-A: Status 5</a>').appendTo($('#chat_outer .panel-heading'))
-        .click(function(e){
-        allianceS5Notifcation = !allianceS5Notifcation;
-        $(this).hasClass("btn-success") ? $(this).removeClass("btn-success").addClass("btn-danger"): $(this).addClass("btn-success").removeClass("btn-danger");
-        return false;
-    });
-    }
-    else
-    {
-    $('<a href="#" class="btn btn-danger btn-xs pull-right" title="Notification-Alarm aus/ein schalten">N-A: Status 5</a>').appendTo($('#chat_outer .panel-heading'))
-        .click(function(e){
-        allianceS5Notifcation = !allianceS5Notifcation;
-        $(this).hasClass("btn-success") ? $(this).removeClass("btn-success").addClass("btn-danger"): $(this).addClass("btn-success").removeClass("btn-danger");
-        return false;
-    });
-    }
-
-    if(allianceStatusNotifcation)
-    {
-      $('<a href="#" class="btn btn-success btn-xs pull-right" title="Notification-Alarm aus/ein schalten">N-A: Status</a>').appendTo($('#chat_outer .panel-heading'))
-        .click(function(e){
-        allianceStatusNotifcation = !allianceStatusNotifcation;
-        $(this).hasClass("btn-success") ? $(this).removeClass("btn-success").addClass("btn-danger"): $(this).addClass("btn-success").removeClass("btn-danger");
-        return false;
-    });
-    }
-    else
-    {
-    $('<a href="#" class="btn btn-danger btn-xs pull-right" title="Notification-Alarm aus/ein schalten">N-A: Status</a>').appendTo($('#chat_outer .panel-heading'))
-        .click(function(e){
-        allianceStatusNotifcation = !allianceStatusNotifcation;
-        $(this).hasClass("btn-success") ? $(this).removeClass("btn-success").addClass("btn-danger"): $(this).addClass("btn-success").removeClass("btn-danger");
-        return false;
-    });
-    }
     var allianceChatBuffer = allianceChat;
     var radioMessageBuffer = radioMessage;
     var missionListBuffer = mission_list;
