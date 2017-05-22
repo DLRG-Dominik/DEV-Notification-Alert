@@ -105,6 +105,9 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
             if (permission === "granted") {
                 var notification = new Notification("Benachrichtungen aktiviert!");
             }
+            else {
+              
+            }
         });
     }
 
