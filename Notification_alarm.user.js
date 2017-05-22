@@ -2,7 +2,9 @@
 var allianceChatNotifcation = (localStorage.getItem("Chat") == "true"); // true = Chat-Notification sind standardmäßig aktiviert (Standard: true).
 var allianceS5Notifcation = (localStorage.getItem("S5") == "true"); // true = Status 5-Notification sind standardmäßig aktiviert (Standard: true).
 var allianceStatusNotifcation = (localStorage.getItem("Status") == "true"); // true = Alle anderen Status-Notification sind standardmäßig aktiviert (Standard: false).
+var allianceChatPNotifcation = (localStorage.getItem("ChatP") == "true"); // true = Alle anderen Status-Notification sind standardmäßig aktiviert (Standard: false).
 var timeout_Chat = localStorage.getItem("Chat_blend"); //Zeit in Sekunden wie lange Chat-Notifications angezeigt werden sollen (Standard: 3).
+var timeout_S5 = localStorage.getItem("S5_blend"); //Zeit in Sekunden wie lange S5-Notifications angezeigt werden sollen (Standard: 3).
 var timeout_Status = localStorage.getItem("Status_blend"); //Zeit in Sekunden wie lange Status-Notifications angezeigt werden sollen (Standard: 3).
 var timeout_ChatPopup = localStorage.getItem("ChatP_blend");
 
@@ -70,6 +72,21 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
                 icon: "https://raw.githubusercontent.com/DLRG-Dominik/LSSNotifity-Alarm/master/Status_"+fms+".png",
             });
             setTimeout(function() {     notification.close(); }, timeout_Status*1000);
+            notification.onclick = function () {
+
+                $( "body" ).append('<a href="/vehicles/'+ vid +'" id="v_'+vid+'_'+fms+'" class="btn btn-xs btn-default lightbox-open">'+username+'</a>');
+                $('#v_'+vid+'_'+fms+'').click();
+                window.focus();
+                $('#v_'+vid+'_'+fms+'').remove();
+            };
+        }
+        else if(type =="S5")
+        {
+            var notification = new Notification(username, {
+                body: message,
+                icon: "https://raw.githubusercontent.com/DLRG-Dominik/LSSNotifity-Alarm/master/Status_"+fms+".png",
+            });
+            setTimeout(function() {     notification.close(); }, timeout_S5*1000);
             notification.onclick = function () {
 
                 $( "body" ).append('<a href="/vehicles/'+ vid +'" id="v_'+vid+'_'+fms+'" class="btn btn-xs btn-default lightbox-open">'+username+'</a>');
@@ -153,10 +170,6 @@ function NotificationAlarm_show_settings()
       }
     }
 	});
-  /*$( "body" ).append('<li><a href="https://dlrg-dominik.github.io/DEV-Notification-Alert/settings_'+ set.locale +'.html" class="btn btn-success btn-xs lightbox-open" id="N-A_activate">N-A Settings</a></li>');
-  $('#N-A_activate').click();
-  window.focus();
-  $('#N-A_activate').remove();*/
 }
 notifyMe(set.translations[set.locale].inithead,set.translations[set.locale].init,"init");
 (function(){
@@ -165,8 +178,16 @@ notifyMe(set.translations[set.locale].inithead,set.translations[set.locale].init
     var missionListBuffer = mission_list;
     allianceChat = function(t){
         allianceChatBuffer(t);
-        if(user_id !== t.user_id && allianceChatNotifcation){
+        if(user_id !== t.user_id && allianceChatNotifcation && !allianceChatPNotifcation){
 
+            notifyMe(t.username,t.message,"Chat");
+        }
+        else if (user_id !== t.user_id && allianceChatPNotifcation && !allianceChatNotifcation) {
+          ChatPopup(t.date,t.user_id,t.username,t.mission_id,t.message);
+        }
+        else if (user_id !== t.user_id && allianceChatPNotifcation && allianceChatNotifcation)
+        {
+            ChatPopup(t.date,t.user_id,t.username,t.mission_id,t.message);
             notifyMe(t.username,t.message,"Chat");
         }
     };
@@ -177,12 +198,12 @@ notifyMe(set.translations[set.locale].inithead,set.translations[set.locale].init
             {
                 if(!alliance_ignore_fms)
                 {
-                    notifyMe(t.caption,t.fms_text,"Status",t.fms_real,t.id);
+                    notifyMe(t.caption,t.fms_text,"S5",t.fms_real,t.id);
                 }
             }
             else
             {
-                notifyMe(t.caption,t.fms_text,"Status",t.fms_real,t.id);
+                notifyMe(t.caption,t.fms_text,"S5",t.fms_real,t.id);
             }
         }
         else if(t.fms_real != 5 && allianceStatusNotifcation){
