@@ -16,22 +16,19 @@ var set = {
                not_support:"Dieser Browser unterstützt leider keine HTML5-Notifications",
                init:"Notification-Alarm wird initalisiert, Bitte warten...",
                inithead:"Initalisierung",
-               chat_message: "Chatnachricht von ",
-               del:"Löschen"
+               chat_message: "Chatnachricht von "
            },
            en: {
                save:"This browser does not support HTML5 notifications",
                init:"Notification alarm is initialized, please wait ...",
                inithead:"Initialization",
-               chat_message: "Chat message from",
-               del:"Löschen"
+               chat_message: "Chat message from "
            },
            nl: {
                save:"Helaas ondersteunt deze browser ondersteunt geen HTML5 meldingen",
                init:"Melding alarm wordt geactiveerd, Please wait ...",
                inithead:"initialisatie",
-               chat_message: "Chat bericht ",
-               del:"Löschen"
+               chat_message: "Chat bericht "
            }
        }
    };
@@ -106,7 +103,7 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
                 var notification = new Notification("Benachrichtungen aktiviert!");
             }
             else {
-              
+
             }
         });
     }
