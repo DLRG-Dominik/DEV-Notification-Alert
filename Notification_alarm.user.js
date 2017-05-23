@@ -103,7 +103,7 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
         {
             var notification = new Notification(set.translations[set.locale].chat_message+username, {
                 body: message,
-                icon: "https://raw.githubusercontent.com/DLRG-Dominik/LSSNotifity-Alarm/master/134895.png"
+                icon: "https://dlrg-dominik.github.io/DEV-Notification-Alert/img/134895.png"
             });
             setTimeout(function() {     notification.close(); }, timeout_Chat*1000);
             notification.onclick = function () {
@@ -114,7 +114,7 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
         {
             var notification = new Notification(username, {
                 body: message,
-                icon: "https://raw.githubusercontent.com/DLRG-Dominik/LSSNotifity-Alarm/master/Status_"+fms+".png",
+                icon: "https://dlrg-dominik.github.io/DEV-Notification-Alert/img/Status_"+fms+".png",
             });
             setTimeout(function() {     notification.close(); }, timeout_Status*1000);
             notification.onclick = function () {
@@ -129,7 +129,7 @@ function notifyMe(username,message,type="init",fms="2",vid="0") {
         {
             var notification = new Notification(username, {
                 body: message,
-                icon: "https://raw.githubusercontent.com/DLRG-Dominik/LSSNotifity-Alarm/master/Status_"+fms+".png",
+                icon: "https://dlrg-dominik.github.io/DEV-Notification-Alert/img/Status_"+fms+".png",
             });
             setTimeout(function() {     notification.close(); }, timeout_S5*1000);
             notification.onclick = function () {
